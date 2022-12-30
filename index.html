@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proiect - Crețu Costin-Răzvan</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h1>EDITOR PENTRU GRAFICĂ VECTORIALĂ FOLOSIND ELEMENTUL SVG</h1>
+    <div class="instruments">
+        <div class="base_geometric_elements">
+            <p>Alege un element geometric de bază</p>
+            <button id="btnLine" onclick="setLine()">Linie</button>
+            <button id="btnEllipse" onclick="setEllipse()">Elipsă</button>
+            <button id="btnRectangle" onclick="setRectangle()">Dreptunghi</button>
+        </div>
+        <div class="styling">
+            <input type="color" id="background_color">Schimbă culoarea fundal
+            <input type="color" id="stroke_color">Schimbă culoarea linie
+            <input type="range" id="stroke_width" value="2" min="0">Grosime linie
+        </div>
+    </div>
+    <svg id="editor" height="500">
+        <svg id="elements"></svg>
+        <line id="selectLine" style="display:none;"></line>
+        <ellipse id="selectEllipse" style="display:none;"></ellipse>
+        <rect id="selectRectangle" width="0" height="0" style="display:none;"></rect>
+    </svg>
+    <script src="script.js"></script>
+</body>
+
+</html>
