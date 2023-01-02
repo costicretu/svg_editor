@@ -6,31 +6,36 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Proiect - Crețu Costin-Răzvan</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="6_1083_CREȚU_CostinRăzvan.css">
 </head>
 
 <body>
     <h1>EDITOR PENTRU GRAFICĂ VECTORIALĂ FOLOSIND ELEMENTUL SVG</h1>
     <div class="instruments">
         <div class="base_geometric_elements">
-            <p>Alege un element geometric de bază</p>
+            <p>Elemente geometrice de bază</p>
             <button id="btnLine" onclick="setLine()">Linie</button>
             <button id="btnEllipse" onclick="setEllipse()">Elipsă</button>
             <button id="btnRectangle" onclick="setRectangle()">Dreptunghi</button>
         </div>
         <div class="styling">
+            <p>Stilizare</p>
             <input type="color" id="background_color">Schimbă culoarea fundal
             <input type="color" id="stroke_color">Schimbă culoarea linie
             <input type="range" id="stroke_width" value="2" min="0">Grosime linie
         </div>
+        <div class="operations">
+            <p>Operațiuni</p>
+            <button id="btnSavePNG" onclick="saveImage()">Export în format de tip raster</button>
+        </div>
     </div>
-    <svg id="editor" height="500">
+    <svg id="editor" xmlns="http://www.w3.org/2000/svg" >
         <svg id="elements"></svg>
         <line id="selectLine" style="display:none;"></line>
         <ellipse id="selectEllipse" style="display:none;"></ellipse>
         <rect id="selectRectangle" width="0" height="0" style="display:none;"></rect>
     </svg>
-    <script src="script.js"></script>
+    <script src="6_1083_CREȚU_CostinRăzvan.js"></script>
 </body>
 
 </html>
