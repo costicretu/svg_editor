@@ -86,26 +86,6 @@ h1 {
     display: inline-block;
 }
 
-#btnSavePNG {
-    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    font-size: large;
-    background-color:lightblue;
-    border-radius: 4px;
-    border: none;
-    margin-right: 5px;
-    margin-left: 5px;
-}
-
-#btnSaveSVG {
-    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    font-size: large;
-    background-color:lightblue;
-    border-radius: 4px;
-    border: none;
-    margin-right: 5px;
-    margin-left: 5px;
-}
-
 svg {
     padding: 0px;
     background-color: rgb(255, 255, 255);
@@ -128,4 +108,34 @@ svg #selectLine {
     fill: transparent;
     stroke-opacity: 0.6;
     stroke-dasharray: 3, 3;
+}
+
+#btnSavePNG {
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: large;
+    background-color:lightblue;
+    border-radius: 4px;
+    border: none;
+    margin-right: 5px;
+    margin-left: 5px;
+}
+
+#btnSaveSVG {
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: large;
+    background-color:lightblue;
+    border-radius: 4px;
+    border: none;
+    margin-right: 5px;
+    margin-left: 5px;
+}
+
+#btnHelp {
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: large;
+    display: inline-block;
+    background-color:lightblue;
+    border-radius: 4px;
+    border: none;
+    margin-top: 10px;
 }
