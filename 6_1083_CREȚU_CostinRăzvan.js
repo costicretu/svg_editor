@@ -7,21 +7,41 @@ var MOUSE_LEFT = 0, MOUSE_RIGHT = 2
 var x1 = 0, y1 = 0
 var selectedElement = null
 var figure
-function setLine() { figure = 'line' }
+document.getElementById('styling').style.display ='none'
+document.getElementById('operations').style.display ='none'
+function setLine() { 
+    figure = 'line'
+    document.getElementById('styling').style.display ='block'
+    document.getElementById('operations').style.display ='block'
+    document.getElementById('background_color').style.display = 'none'
+    document.getElementById('background').style.display = 'none'
+}
 function setCoordinatesLine(object, x1, y1, x2, y2) {
     object.setAttributeNS(null, 'x1', x1)
     object.setAttributeNS(null, 'y1', y1)
     object.setAttributeNS(null, 'x2', x2)
     object.setAttributeNS(null, 'y2', y2)
 }
-function setEllipse() { figure = 'ellipse' }
+function setEllipse() { 
+    figure = 'ellipse'
+    document.getElementById('styling').style.display ='block'
+    document.getElementById('operations').style.display ='block'
+    document.getElementById('background_color').style.display = 'inline-block'
+    document.getElementById('background').style.display = 'inline-block'
+}
 function setCoordinatesEllipse(object, x1, y1, x2, y2) {
     object.setAttributeNS(null, 'cx', (x1 + x2) / 2)
     object.setAttributeNS(null, 'cy', (y1 + y2) / 2)
     object.setAttributeNS(null, 'rx', (Math.max(x1, x2) - Math.min(x1, x2)) / 2)
     object.setAttributeNS(null, 'ry', (Math.max(y1, y2) - Math.min(y1, y2)) / 2)
 }
-function setRectangle() { figure = 'rectangle' }
+function setRectangle() { 
+    figure = 'rectangle'
+    document.getElementById('styling').style.display ='block'
+    document.getElementById('operations').style.display ='block'
+    document.getElementById('background_color').style.display = 'inline-block'
+    document.getElementById('background').style.display = 'inline-block'
+}
 function setCoordinatesRectangle(object, x1, y1, x2, y2) {
     object.setAttributeNS(null, 'x', Math.min(x1, x2))
     object.setAttributeNS(null, 'y', Math.min(y1, y2))
@@ -68,6 +88,18 @@ editor.onmousemove = function (e) {
     setCoordinatesEllipse(selectEllipse, x1, y1, x2, y2)
     setCoordinatesRectangle(selectRectangle, x1, y1, x2, y2)
 }
+function changeStrokeColorNE() {
+    var stroke_color = document.getElementById('stroke_color').value
+    newelement.setAttribute('stroke', stroke_color)
+}
+function changeStrokeWidthNE() {
+    var stroke_width = document.getElementById('stroke_width').value
+    newelement.style.strokeWidth = stroke_width
+}
+function changeBackgroundColorNE() {
+    var background_color = document.getElementById('background_color').value
+    newelement.setAttribute('fill', background_color)
+}
 editor.onmouseup = function (e) {
     if (e.button == MOUSE_LEFT) {
         x2 = e.pageX - this.getBoundingClientRect().left
@@ -75,33 +107,25 @@ editor.onmouseup = function (e) {
         selectLine.style.display = 'none'
         selectEllipse.style.display = 'none'
         selectRectangle.style.display = 'none'
-        if (figure == 'rectangle') {
-            newelement = document.createElementNS('http://www.w3.org/2000/svg', 'rect')
-            setCoordinatesRectangle(newelement, x1, y1, x2, y2)
-            var background_color = document.getElementById('background_color').value
-            newelement.setAttribute('fill', background_color)
-            var stroke_color = document.getElementById('stroke_color').value
-            newelement.setAttribute('stroke', stroke_color)
-            var stroke_width = document.getElementById('stroke_width').value
-            newelement.style.strokeWidth = stroke_width
+        if (figure == 'line') {
+            newelement = document.createElementNS('http://www.w3.org/2000/svg', 'line')
+            setCoordinatesLine(newelement, x1, y1, x2, y2)
+            changeStrokeColorNE()
+            changeStrokeWidthNE()
         }
         if (figure == 'ellipse') {
             newelement = document.createElementNS('http://www.w3.org/2000/svg', 'ellipse')
             setCoordinatesEllipse(newelement, x1, y1, x2, y2)
-            var background_color = document.getElementById('background_color').value
-            newelement.setAttribute('fill', background_color)
-            var stroke_color = document.getElementById('stroke_color').value
-            newelement.setAttribute('stroke', stroke_color)
-            var stroke_width = document.getElementById('stroke_width').value
-            newelement.style.strokeWidth = stroke_width
+            changeBackgroundColorNE()
+            changeStrokeColorNE()
+            changeStrokeWidthNE()
         }
-        if (figure == 'line') {
-            newelement = document.createElementNS('http://www.w3.org/2000/svg', 'line')
-            setCoordinatesLine(newelement, x1, y1, x2, y2)
-            var stroke_color = document.getElementById('stroke_color').value
-            newelement.setAttribute('stroke', stroke_color)
-            var stroke_width = document.getElementById('stroke_width').value
-            newelement.style.strokeWidth = stroke_width
+        if (figure == 'rectangle') {
+            newelement = document.createElementNS('http://www.w3.org/2000/svg', 'rect')
+            setCoordinatesRectangle(newelement, x1, y1, x2, y2)
+            changeBackgroundColorNE()
+            changeStrokeColorNE()
+            changeStrokeWidthNE()
         }
         newelement.onmousedown = function (e) {
             if (e.button == MOUSE_RIGHT) {
@@ -126,28 +150,27 @@ document.onkeydown = function (e) {
         selectedElement.remove();
 }
 function saveImage() {
-    const canvas = document.createElement('canvas')
-    const base64doc = btoa(unescape(encodeURIComponent(editor.outerHTML)))
-    const w = parseInt(editor.getAttribute('width'))
-    const h = parseInt(editor.getAttribute('height'))
-    const img_to_download = document.createElement('img')
-    img_to_download.src = 'data:image/svg+xml;base64,' +base64doc
-    console.log(w,h)
-    img_to_download.onload=function(){
-        console.log('img loaded')
+    var canvas = document.createElement('canvas')
+    var base64 = btoa(decodeURIComponent(encodeURI(editor.outerHTML)))
+    var w = Number(editor.getAttribute('width'))
+    var h = Number(editor.getAttribute('height'))
+    var img = document.createElement('img')
+    img.src = 'data:image/svg+xml;base64,' + base64
+    img.onload = () => {
         canvas.setAttribute('width', w)
         canvas.setAttribute('height', h)
-        const context = canvas.getContext('2d')
-        context.drawImage(img_to_download,0,0,w,h)
-        const dataURL = canvas.toDataURL('image/png')
-        if(window.navigator.msSaveBlob) {
-            window.navigator.msSaveBlob(canvas.msToBlob(), 'download.png')
-        } else {
-            const a = document.createElement('a')
-            const my_evt = new MouseEvent('click')
-            a.download = 'download.png'
-            a.href = dataURL
-            a.dispatchEvent(my_evt)
-        }
+        var context = canvas.getContext('2d')
+        context.drawImage(img, 0, 0, w, h) 
+        var link = document.createElement('a')
+        link.download = 'svg.png'
+        link.href = canvas.toDataURL('image/png')
+        link.click()
     }
+}
+function saveSVG() {
+    var base64 = btoa(decodeURIComponent(encodeURI(editor.outerHTML)))
+    var link = document.createElement('a')
+    link.download = 'svg.svg';
+    link.href = 'data:image/svg+xml;base64,' + base64;
+    link.click()
 }
