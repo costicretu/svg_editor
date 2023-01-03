@@ -7,12 +7,11 @@ var MOUSE_LEFT = 0, MOUSE_RIGHT = 2
 var x1 = 0, y1 = 0
 var selectedElement = null
 var figure
-document.getElementById('styling').style.display ='none'
-document.getElementById('operations').style.display ='none'
-function setLine() { 
+document.getElementById('styling').style.display = 'none'
+document.getElementById('operations').style.display = 'none'
+function setLine() {
     figure = 'line'
-    document.getElementById('styling').style.display ='block'
-    document.getElementById('operations').style.display ='block'
+    document.getElementById('styling').style.display = 'block'
     document.getElementById('background_color').style.display = 'none'
     document.getElementById('background').style.display = 'none'
 }
@@ -22,10 +21,9 @@ function setCoordinatesLine(object, x1, y1, x2, y2) {
     object.setAttributeNS(null, 'x2', x2)
     object.setAttributeNS(null, 'y2', y2)
 }
-function setEllipse() { 
+function setEllipse() {
     figure = 'ellipse'
-    document.getElementById('styling').style.display ='block'
-    document.getElementById('operations').style.display ='block'
+    document.getElementById('styling').style.display = 'block'
     document.getElementById('background_color').style.display = 'inline-block'
     document.getElementById('background').style.display = 'inline-block'
 }
@@ -35,10 +33,9 @@ function setCoordinatesEllipse(object, x1, y1, x2, y2) {
     object.setAttributeNS(null, 'rx', (Math.max(x1, x2) - Math.min(x1, x2)) / 2)
     object.setAttributeNS(null, 'ry', (Math.max(y1, y2) - Math.min(y1, y2)) / 2)
 }
-function setRectangle() { 
+function setRectangle() {
     figure = 'rectangle'
-    document.getElementById('styling').style.display ='block'
-    document.getElementById('operations').style.display ='block'
+    document.getElementById('styling').style.display = 'block'
     document.getElementById('background_color').style.display = 'inline-block'
     document.getElementById('background').style.display = 'inline-block'
 }
@@ -142,6 +139,7 @@ editor.onmouseup = function (e) {
             }
         }
         elements.appendChild(newelement)
+        document.getElementById('operations').style.display = 'block'
     }
 }
 editor.oncontextmenu = function () { return false }
@@ -160,7 +158,7 @@ function saveImage() {
         canvas.setAttribute('width', w)
         canvas.setAttribute('height', h)
         var context = canvas.getContext('2d')
-        context.drawImage(img, 0, 0, w, h) 
+        context.drawImage(img, 0, 0, w, h)
         var link = document.createElement('a')
         link.download = 'svg.png'
         link.href = canvas.toDataURL('image/png')

@@ -1,93 +1,109 @@
 body {
     background-color: darkcyan;
+    background-image: url('media/background.jpg');
+}
+
+.elements {
+    text-align: center;
 }
 
 h1 {
     text-align: center;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: medium;
+    font-size: 28px;
 }
 
 #choose {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: medium;
+    font-size: x-large;
     display: inline-block;
+    margin-right: 10px;
 }
 
 #btnLine {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: medium;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: large;
     display: inline-block;
+    background-color:lightblue;
+    border-radius: 4px;
+    border: none;
+    margin-right: 5px;
+    margin-left: 5px;
 }
 
 #btnEllipse {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: medium;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: large;
     display: inline-block;
+    background-color:lightblue;
+    border-radius: 4px;
+    border: none;
+    margin-right: 5px;
+    margin-left: 5px;
 }
 
 #btnRectangle {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: medium;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: large;
     display: inline-block;
+    background-color:lightblue;
+    border-radius: 4px;
+    border: none;
+    margin-right: 5px;
+    margin-left: 5px;
 }
 
 #style {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: medium;
+    font-size: x-large;
     display: inline-block;
-}
-
-#stroke_color {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: medium;
-    display: inline-block;
+    margin-right: 10px;
 }
 
 #line {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: small;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: large;
     display: inline-block;
-}
-
-#stroke_width {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: medium;
-    display: inline-block;
+    margin-right: 10px;
 }
 
 #width {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: small;
-    display: inline-block;
-}
-
-#background_color {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: medium;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: large;
     display: inline-block;
 }
 
 #background {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: small;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: large;
     display: inline-block;
+    margin-right: 10px;
 }
 
 #operation {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: medium;
+    font-size: x-large;
     display: inline-block;
 }
 
 #btnSavePNG {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: small;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: large;
+    background-color:lightblue;
+    border-radius: 4px;
+    border: none;
+    margin-right: 5px;
+    margin-left: 5px;
 }
 
 #btnSaveSVG {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: small;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: large;
+    background-color:lightblue;
+    border-radius: 4px;
+    border: none;
+    margin-right: 5px;
+    margin-left: 5px;
 }
 
 svg {
@@ -96,6 +112,7 @@ svg {
     cursor: cell;
     display: block;
     margin: auto;
+    border-radius: 8px;
 }
 
 svg rect,
