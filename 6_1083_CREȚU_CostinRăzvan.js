@@ -174,34 +174,3 @@ function saveSVG() {
     link.href = 'data:image/svg+xml;base64,' + base64;
     link.click()
 }
-selectLine.onmousedown = function (event) {
-    // (1) prepare to moving: make absolute and on top by z-index
-    selectLine.style.position = 'absolute'
-    selectLine.style.zIndex = 1000
-
-    // move it out of any current parents directly into body
-    // to make it positioned relative to the body
-    document.body.append(selectLine)
-
-    // centers the ball at (pageX, pageY) coordinates
-    function moveAt(pageX, pageY) {
-        selectLine.style.left = pageX - selectLine.offsetWidth / 2 + 'px'
-        selectLine.style.top = pageY - selectLine.offsetHeight / 2 + 'px'
-    }
-
-    // move our absolutely positioned ball under the pointer
-    moveAt(event.pageX, event.pageY)
-
-    function onMouseMove(event) {
-        moveAt(event.pageX, event.pageY)
-    }
-
-    // (2) move the ball on mousemove
-    document.addEventListener('mousemove', onMouseMove)
-
-    // (3) drop the ball, remove unneeded handlers
-    selectLine.onmouseup = function () {
-        document.removeEventListener('mousemove', onMouseMove)
-        selectLine.onmouseup = null
-    }
-}
