@@ -14,6 +14,9 @@ function setLine() {
     document.getElementById('styling').style.display = 'block'
     document.getElementById('background_color').style.display = 'none'
     document.getElementById('background').style.display = 'none'
+    document.getElementById('btnLine').style.opacity = '1'
+    document.getElementById('btnEllipse').style.opacity = '0.6'
+    document.getElementById('btnRectangle').style.opacity = '0.6'
 }
 function setCoordinatesLine(object, x1, y1, x2, y2) {
     object.setAttributeNS(null, 'x1', x1)
@@ -26,6 +29,9 @@ function setEllipse() {
     document.getElementById('styling').style.display = 'block'
     document.getElementById('background_color').style.display = 'inline-block'
     document.getElementById('background').style.display = 'inline-block'
+    document.getElementById('btnLine').style.opacity = '0.6'
+    document.getElementById('btnEllipse').style.opacity = '1'
+    document.getElementById('btnRectangle').style.opacity = '0.6'
 }
 function setCoordinatesEllipse(object, x1, y1, x2, y2) {
     object.setAttributeNS(null, 'cx', (x1 + x2) / 2)
@@ -38,6 +44,9 @@ function setRectangle() {
     document.getElementById('styling').style.display = 'block'
     document.getElementById('background_color').style.display = 'inline-block'
     document.getElementById('background').style.display = 'inline-block'
+    document.getElementById('btnLine').style.opacity = '0.6'
+    document.getElementById('btnEllipse').style.opacity = '0.6'
+    document.getElementById('btnRectangle').style.opacity = '1'
 }
 function setCoordinatesRectangle(object, x1, y1, x2, y2) {
     object.setAttributeNS(null, 'x', Math.min(x1, x2))
@@ -144,10 +153,15 @@ editor.onmouseup = function (e) {
 }
 editor.oncontextmenu = function () { return false }
 document.onkeydown = function (e) {
-    if (e.keyCode == 46 && selectedElement)
+    if (e.keyCode == 46 && selectedElement) {
         selectedElement.remove();
-    if (e.keyCode == 27)
+    }
+    if (e.keyCode == 27) {
         figure = null;
+        document.getElementById('btnLine').style.opacity = '1'
+        document.getElementById('btnEllipse').style.opacity = '1'
+        document.getElementById('btnRectangle').style.opacity = '1'
+    }
 }
 function saveImage() {
     var canvas = document.createElement('canvas')
