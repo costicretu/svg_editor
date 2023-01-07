@@ -20,10 +20,10 @@ h1 {
 }
 
 #btnLine {
-    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-size: large;
     display: inline-block;
-    background-color:lightblue;
+    background-color: lightblue;
     border-radius: 4px;
     border: none;
     margin-right: 5px;
@@ -36,10 +36,10 @@ button:active {
 }
 
 #btnEllipse {
-    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-size: large;
     display: inline-block;
-    background-color:lightblue;
+    background-color: lightblue;
     border-radius: 4px;
     border: none;
     margin-right: 5px;
@@ -48,10 +48,10 @@ button:active {
 }
 
 #btnRectangle {
-    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-size: large;
     display: inline-block;
-    background-color:lightblue;
+    background-color: lightblue;
     border-radius: 4px;
     border: none;
     margin-right: 5px;
@@ -67,20 +67,20 @@ button:active {
 }
 
 #line {
-    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-size: large;
     display: inline-block;
     margin-right: 10px;
 }
 
 #width {
-    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-size: large;
     display: inline-block;
 }
 
 #background {
-    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-size: large;
     display: inline-block;
     margin-right: 10px;
@@ -117,9 +117,9 @@ svg #selectLine {
 }
 
 #btnSavePNG {
-    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-size: large;
-    background-color:lightblue;
+    background-color: lightblue;
     border-radius: 4px;
     border: none;
     margin-right: 5px;
@@ -128,9 +128,9 @@ svg #selectLine {
 }
 
 #btnSaveSVG {
-    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-size: large;
-    background-color:lightblue;
+    background-color: lightblue;
     border-radius: 4px;
     border: none;
     margin-right: 5px;
@@ -139,10 +139,10 @@ svg #selectLine {
 }
 
 #btnHelp {
-    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-size: large;
     display: inline-block;
-    background-color:lightblue;
+    background-color: lightblue;
     border-radius: 4px;
     border: none;
     margin-top: 10px;
