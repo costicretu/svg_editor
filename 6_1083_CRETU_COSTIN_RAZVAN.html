@@ -12,6 +12,7 @@
 <body>
     <h1>EDITOR PENTRU GRAFICĂ VECTORIALĂ FOLOSIND ELEMENTUL SVG</h1>
     <div class="elements">
+        <!-- alegere elemente geometrice-->
         <div class="basic_geometric_elements">
             <p id="choose">Alege un element geometric de bază:</p>
             <button id="btnLine" onclick="setLine()">Linie</button>
@@ -19,25 +20,30 @@
             <button id="btnRectangle" onclick="setRectangle()">Dreptunghi</button>
         </div>
         <div id="styling">
+            <!--stilizare elemente geometrice, daca este selectat elementul linie, nu se va putea edita culoarea fundalului, in caz contrar se va putea edita-->
             <p id="style">Stilizare:</p>
             <input type="color" id="background_color">
             <p id="background">>culoare fundal</p>
             <input type="color" id="stroke_color">
             <p id="line">>culoare linie</p>
             <input type="range" id="stroke_width" value="2" min="3" max="15">
-            <p id="width">>grosime linie</p>
+            <p id="thickness">>grosime linie</p>
         </div>
-        <svg id="editor" width="750" height="550" xmlns="http://www.w3.org/2000/svg">
+        <!--editor svg pe care se vor desena elementele-->
+        <svg id="editor" width="750" height="500" xmlns="http://www.w3.org/2000/svg">
             <svg id="elements"></svg>
+            <!--selectare elemente geometrice-->
             <line id="selectLine" style="display:none;"></line>
             <ellipse id="selectEllipse" style="display:none;"></ellipse>
             <rect id="selectRectangle" width="0" height="0" style="display:none;"></rect>
         </svg>
         <div id="operations">
+            <!--selectare tip export svg in format png sau svg-->
             <p id="operation">Operațiuni:</p>
             <button id="btnSavePNG" onclick="saveImage()">Export în format de tip raster</button>
             <button id="btnSaveSVG" onclick="saveSVG()">Export în format de tip SVG</button>
         </div>
+        <!--buton comenzi ajutatoare, forteaza serverul pe care este pornit fisierul html sa informeze utilizatorul la apasarea butonului-->
         <button id="btnHelp"
             onclick="alert('Desenează - mouse stânga\n' + 'Selectează - mouse dreapta\n' + 'Șterge - tasta Delete\n' + 'Oprire - tasta Esc')">Suport
             ajutor</button>
